@@ -11,7 +11,7 @@
 
     tools:context=".ui.profile.ProfileFragment">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/iv_avatar"
         android:layout_width="250dp"
         android:layout_height="250dp"

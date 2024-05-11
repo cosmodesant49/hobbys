@@ -1,4 +1,4 @@
-package com.geeks.hobbys.ui
+package com.geeks.hobbys.ui.model
 
 class User {
     var uid:String? = null

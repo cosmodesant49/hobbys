@@ -14,7 +14,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.geeks.hobbys.MainActivity
 import com.geeks.hobbys.databinding.FragmentProfileBinding
-import com.geeks.hobbys.ui.User
+import com.geeks.hobbys.ui.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
