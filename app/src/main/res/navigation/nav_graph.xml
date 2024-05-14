@@ -3,26 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/chatFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.geeks.hobbys.ui.registration.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first" >
+        android:id="@+id/chatFragment"
+        android:name="com.geeks.hobbys.ui.chat.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" />
 
-        <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
-    </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.geeks.hobbys.ui.registration.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second" >
+        android:id="@+id/recFragment"
+        android:name="com.geeks.hobbys.ui.rec.RecFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_to_chat_fragment"
+            app:destination="@id/chatFragment" />
+
     </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.geeks.hobbys.ui.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_recFragment"
+            app:destination="@id/recFragment" />
+    </fragment>
+    <include app:graph="@navigation/mobile_navigation" />
+
 </navigation>

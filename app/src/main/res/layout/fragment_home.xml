@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/fragment_container"
     android:gravity="center_horizontal"
     android:layout_gravity="center_horizontal"
     android:background="@color/blue"

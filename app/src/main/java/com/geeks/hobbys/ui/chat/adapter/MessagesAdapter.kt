@@ -10,18 +10,18 @@ import com.bumptech.glide.Glide
 import com.geeks.hobbys.R
 import com.geeks.hobbys.databinding.DeleteLayoutBinding
 import com.geeks.hobbys.databinding.SendMsgBinding
-import com.geeks.hobbys.ui.model.Message
+import com.geeks.hobbys.ui.model.MessageModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
 class MessagesAdapter(
     var context: Context,
-    message:ArrayList<Message>?,
+    message: ArrayList<MessageModel>?,
     senderRoom:String,
     receiverRoom:String
 ):RecyclerView.Adapter<RecyclerView.ViewHolder?>()
 {
-    lateinit var messages:ArrayList<Message>
+    lateinit var messages:ArrayList<MessageModel>
     val ITEM_SENT = 1
     val ITEM_RECEIVE = 2
     val senderRoom: String
@@ -168,8 +168,9 @@ class MessagesAdapter(
     }
     init{
         if (message != null){
-            this.messages = messages
+            this.messages = message
         }
+
         this.senderRoom = senderRoom
         this.receiverRoom = receiverRoom
     }

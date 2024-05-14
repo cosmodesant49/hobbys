@@ -1,6 +1,6 @@
 package com.geeks.hobbys.ui.model
 
-class Message {
+class MessageModel {
     var messageId :String?=null
     var message :String?=null
     var senderId :String?=null
