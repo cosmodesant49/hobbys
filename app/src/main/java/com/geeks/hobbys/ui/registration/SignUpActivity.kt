@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.geeks.hobbys.MainActivity
 import com.geeks.hobbys.databinding.ActivitySignUpBinding
+import com.geeks.hobbys.ui.SetProfileActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class SignUpActivity : AppCompatActivity() {
@@ -47,7 +48,7 @@ class SignUpActivity : AppCompatActivity() {
         firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
             if (task.isSuccessful) {
                 Toast.makeText(this, "Registration successful", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, MainActivity::class.java))
+                startActivity(Intent(this, SetProfileActivity::class.java))
             } else {
                 Toast.makeText(this, "Registration failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
             }

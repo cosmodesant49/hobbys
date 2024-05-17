@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.geeks.hobbys.MainActivity
 import com.geeks.hobbys.databinding.ActivityLoginBinding
+import com.geeks.hobbys.ui.SetProfileActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -49,7 +50,7 @@ class LoginActivity : AppCompatActivity() {
         firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, MainActivity::class.java))
+                startActivity(Intent(this,MainActivity::class.java))
             } else {
                 Toast.makeText(this, "Login failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
             }

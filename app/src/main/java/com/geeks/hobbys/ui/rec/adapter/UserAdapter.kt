@@ -31,6 +31,7 @@ class UserAdapter(private val context: Context, private val userList: ArrayList<
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val user = userList[position]
         holder.binding.tvUsername.text = user.name
+        holder.binding.tvHobby.text = user.hobby
         Glide.with(context).load(user.profileImg)
             .placeholder(R.drawable.avatar)
             .into(holder.binding.civProfile)
@@ -38,6 +39,7 @@ class UserAdapter(private val context: Context, private val userList: ArrayList<
         holder.itemView.setOnClickListener {
             val intent = Intent(context, ChatActivity::class.java).apply {
                 putExtra("name", user.name)
+                putExtra("hobby", user.hobby)
                 putExtra("image", user.profileImg)
                 putExtra("uid", user.uid)
             }

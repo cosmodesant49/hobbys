@@ -10,6 +10,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.geeks.hobbys.MainActivity
 import com.geeks.hobbys.R
 import com.geeks.hobbys.databinding.ActivityChatBinding
 import com.geeks.hobbys.ui.chat.adapter.MessagesAdapter
@@ -132,7 +133,11 @@ class ChatActivity : AppCompatActivity() {
                     }
             }
         }
-
+        binding.ivBack.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
         binding.attachment.setOnClickListener {
             val intent = Intent()
             intent.action = Intent.ACTION_GET_CONTENT
