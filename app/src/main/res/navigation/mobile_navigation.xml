@@ -10,16 +10,9 @@
         android:name="com.geeks.hobbys.ui.rec.RecFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_navigation_home_to_navigation_chat"
-            app:destination="@id/navigation_chat" />
     </fragment>
 
-    <fragment
-        android:id="@+id/navigation_chat"
-        android:name="com.geeks.hobbys.ui.chat.ChatFragment"
-        android:label="Chat"
-        tools:layout="@layout/fragment_chat" />
+
 
     <fragment
         android:id="@+id/navigation_profile"

@@ -2,14 +2,9 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/chatFragment">
+    android:id="@+id/nav_graph">
 
-    <fragment
-        android:id="@+id/chatFragment"
-        android:name="com.geeks.hobbys.ui.chat.ChatFragment"
-        android:label="fragment_chat"
-        tools:layout="@layout/fragment_chat" />
+
 
     <fragment
         android:id="@+id/recFragment"
@@ -17,9 +12,6 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
 
-        <action
-            android:id="@+id/action_to_chat_fragment"
-            app:destination="@id/chatFragment" />
 
     </fragment>
 

@@ -1,98 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.chat.ChatFragment">
+    tools:context=".ui.chat.ChatActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:layout_width="match_parent"
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/blue_button"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        android:id="@+id/toolbar">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
+
             <ImageView
                 android:id="@+id/iv"
-                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
-                android:src="@drawable/ic_arrow_bac"
-                />
+                android:layout_weight="1"
+                android:src="@drawable/ic_arrow_bac" />
+
             <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile01"
                 android:layout_width="42dp"
                 android:layout_height="42dp"
-                android:id="@+id/profile01"
-                android:src="@drawable/avatar"
                 android:layout_gravity="center"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/avatar" />
+
             <LinearLayout
                 android:orientation="vertical"
-                android:layout_marginLeft="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_marginLeft="16dp">
+
                 <TextView
                     android:id="@+id/name"
-                    android:textColor="@color/white"
-                    android:text="Profile Name"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:visibility="invisible"
-                    android:id="@+id/status"
+                    android:layout_height="wrap_content"
+                    android:text="Profile Name"
                     android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="Online"
                     android:textAlignment="textStart"
+                    android:textColor="@color/white"
                     android:textSize="14sp"
                     android:textStyle="normal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:visibility="invisible" />
             </LinearLayout>
-
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
 
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvChat"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@id/toolbar"
-        android:id="@+id/linear01">
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="visible"
-            android:id="@+id/rvChat"/>
-
-    </LinearLayout>
+        app:layout_constraintBottom_toTopOf="@id/linear02" />
 
     <LinearLayout
         android:id="@+id/linear02"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_above="@id/bottom_navigation_view"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/bottom_shape"
         android:orientation="horizontal"
         android:weightSum="2"
-        app:layout_constraintBottom_toTopOf="@id/bottom_navigation_view"
+        android:background="@drawable/bottom_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="6dp"
             android:layout_marginBottom="8dp"
@@ -110,9 +109,8 @@
                 android:padding="8dp">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_gravity="center"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
@@ -129,50 +127,25 @@
                         android:textColorHint="#2C2C2C"
                         android:textSize="15dp"
                         android:textStyle="bold" />
-
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/attachment"
-
-                    android:layout_width="match_parent"
-
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
                     android:padding="8dp"
                     android:src="@drawable/ic_attach"
                     app:tint="#555454" />
 
-                <ImageView
-                    android:id="@+id/camera"
 
-                    android:layout_width="match_parent"
-
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:padding="8dp"
-                    android:src="@drawable/ic_camera"
-                    app:tint="#555454" />
-
-                <!--                <ImageView
-                    android:id="@+id/send"
-
-                    app:tint="#555454"
-
-                    android:layout_weight="3"
-                    android:padding="8dp"
-                    android:src="@drawable/ic_send"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>-->
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-
 
         <ImageView
             android:id="@+id/iv_send"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:layout_gravity="center"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="4dp"
@@ -181,18 +154,6 @@
             android:padding="12dp"
             android:src="@drawable/ic_send"
             app:tint="@color/white" />
-
-
     </LinearLayout>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
