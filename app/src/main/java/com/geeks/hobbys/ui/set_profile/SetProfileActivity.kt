@@ -1,4 +1,4 @@
-package com.geeks.hobbys.ui
+package com.geeks.hobbys.ui.set_profile
 
 import android.app.Activity
 import android.app.ProgressDialog
@@ -15,7 +15,6 @@ import com.geeks.hobbys.ui.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
-import java.util.Date
 
 class SetProfileActivity : AppCompatActivity() {
 

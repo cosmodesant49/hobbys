@@ -4,9 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.geeks.hobbys.MainActivity
 import com.geeks.hobbys.databinding.ActivitySignUpBinding
-import com.geeks.hobbys.ui.SetProfileActivity
+import com.geeks.hobbys.ui.set_profile.SetProfileActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class SignUpActivity : AppCompatActivity() {

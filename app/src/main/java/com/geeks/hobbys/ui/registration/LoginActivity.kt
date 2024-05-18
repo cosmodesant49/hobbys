@@ -8,11 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.geeks.hobbys.MainActivity
 import com.geeks.hobbys.databinding.ActivityLoginBinding
-import com.geeks.hobbys.ui.SetProfileActivity
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var firebaseAuth: FirebaseAuth
